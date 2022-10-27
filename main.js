@@ -6,6 +6,10 @@ class Human {
         this.surname = surname;
         this.yearOfBirth = yearOfBirth;
     }
+
+    getAge() {
+        return new Date().getFullYear() - this.yearOfBirth;
+    }
 }
 
 class Student extends Human {
@@ -20,10 +24,6 @@ class Student extends Human {
 
     #getCourseName() {
         return this.#courseName;
-    }
-
-    getAge() {
-        return new Date().getFullYear() - this.yearOfBirth;
     }
 
     summary() {
