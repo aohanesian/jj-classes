@@ -40,21 +40,21 @@ class Student extends Human {
     }
 
     present() {
-        if (this.attendance.length > 10) throw `must be below 10`;
+        if (this._lessonsAmount > 10) throw `must be below 10`;
         let emptyIndex = this.attendance.indexOf(null);
         if (emptyIndex === -1) throw `Student ${this.name} ${this.surname} visited all classes, cant check attendance`;
         this.attendance[emptyIndex] = true;
     }
 
     absent() {
-        if (this.attendance.length > 10) throw `must be below 10`;
+        if (this._lessonsAmount > 10) throw `must be below 10`;
         let emptyIndex = this.attendance.indexOf(null);
         if (emptyIndex === -1) throw `No more space in ${this.attendance}`;
         this.attendance[emptyIndex] = false;
     }
 
     mark(number) {
-        if (this.grade.length > 10) throw `must be below 10`;
+        if (this._lessonsAmount > 10) throw `must be below 10`;
         if (typeof number !== `number`) throw `enter a number`;
         if (number > 10 || number < 0) throw `enter from 0 to 10`;
         let emptyIndex = this.grade.indexOf(null);
