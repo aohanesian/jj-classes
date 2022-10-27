@@ -10,6 +10,12 @@ class Human {
     getAge() {
         return new Date().getFullYear() - this.yearOfBirth;
     }
+
+    #country = `Ukraine`;
+
+    #getCountry() {
+        return this.#country;
+    }
 }
 
 class Student extends Human {
@@ -18,12 +24,6 @@ class Student extends Human {
         this._lessonsAmount = 10;
         this.grade = Array.from({length: this._lessonsAmount}).fill(null);
         this.attendance = Array.from({length: this._lessonsAmount = 10}).fill(null);
-    }
-
-    #courseName = `JS`;
-
-    #getCourseName() {
-        return this.#courseName;
     }
 
     summary() {
